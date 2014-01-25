@@ -49,7 +49,7 @@ Station getNumberStation(Station stations[]) {
                 stations[verified].number = numbSta;
                 val = true;
             } else {
-                val = false;   
+                val = false;
             }
         } else
             printf("Number of station in used %c", NEWLINE);
@@ -61,7 +61,62 @@ Station getNumberStation(Station stations[]) {
 
 Station getSensors(Station station) {
 
+    int i;
+    char sensors;
 
+    do {
+        printf("Sensor of TEMPERATURE? Y/N ");
+        scanf("%d", &i);
+        
+    } while (i == 1 || i == 2);
+    if (i == 1) {
+        station.sensors[0] = true;
+        printf("Sensor Temperatura Validado");
+    } else {
+        station.sensors[0] = false;
+        printf(" merda");
+    }
+    do {
+        printf("Sensor of PRECIPITATION? Y/N ");
+        scanf("%c", &sensors);
+        limparBufferEntradaDados();
+    } while (sensors != 'Y' || sensors != 'N');
+    if (sensors == 'Y')
+        station.sensors[1] = true;
+    else
+        station.sensors[1] = false;
+    limparBufferEntradaDados();
+    do {
+        printf("Sensor of WINDSPEED? Y/N ");
+        scanf("%c", sensors);
+    } while (sensors != 'Y' || sensors != 'N');
+    if (sensors == 'Y')
+        station.sensors[2] = true;
+    else
+        station.sensors[2] = false;
+    limparBufferEntradaDados();
+
+    do {
+        printf("Sensor of WINDDIRECTION? Y/N");
+        scanf("%c", sensors);
+    } while (sensors != 'Y' || sensors != 'N');
+    if (sensors == 'Y')
+        station.sensors[3] = true;
+    else
+        station.sensors[3] = false;
+    limparBufferEntradaDados();
+
+    do {
+        printf("Sensor of CLOUDINESS Y/N");
+        scanf("%c", sensors);
+    } while (sensors != 'Y' || sensors != 'N');
+    if (sensors == 'Y')
+        station.sensors[4] = true;
+    else
+        station.sensors[4] = false;
+    limparBufferEntradaDados();
+
+    return station;
 
 }
 
@@ -70,15 +125,17 @@ Station getCoordinates(Station station) {
     bool val = false;
 
 
+
+
     do {
         printf("Insert Coordinates X: ");
         scanf("%f", &station.coordinatesX);
         limparBufferEntradaDados();
-        if (station.coordinatesX >= -180 && station.coordinatesX <= 180) {
+        if (station.coordinatesX >= -180 && station.coordinatesX <= 180)
             val = true;
-        } else {
+        else
             val = false;
-        }
+
     } while (val == false);
 
     bool val2 = false;
@@ -96,7 +153,7 @@ Station getCoordinates(Station station) {
     } while (val2 == false);
 
     return station;
-}
+} //** Resolver problema, aceita letras! 
 
 Station addStation(Station stations[], int position) {
 
@@ -106,7 +163,8 @@ Station addStation(Station stations[], int position) {
     stations[position] = getCoordinates(stations[position]);
     stations[position].general = getPhone(stations[position].general);
     stations[position].general = getLevel(stations[position].general);
-    //   station[staNumb].sensors = getSensors(station[staNumb].sensors);
+    stations[position].contMeasurements = 0;
+    stations[position] = getSensors(stations[position]);
 
     return stations[STA_SIZE];
 }
@@ -195,25 +253,16 @@ Station removeStation(Station stations[], unsigned short int number) {
 
     for (i = 0; i < STA_SIZE; i++) {
         if (stations[i].number == number) {
-            stations[i].number = 0;
+            if (stations[i].contMeasurements == 0) {
+                stations[i].number = 0;
+                printf("Station number %hu deleted.", number);
+                return stations[STA_SIZE];
+            }
         }
+        printf("Station number %hu not fund.", number);
     }
-    return stations[STA_SIZE];
-}
 
-/*
-
-Station removeStation(Station stations[], unsigned short int number) {
-    int i;
-    
-    for(i=0; i<STA_SIZE; i++){
-        if(stations[i].number == number) {
-            stations[i].number = STA_INIT;
-        }
-    }
-    return stations[STA_SIZE];
 }
- */
 
 void listStations(Station stations[]) {
     int i;

@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=lpn42
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/lpn42
+CND_ARTIFACT_NAME_Debug=lp_42_tt
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/lp_42_tt
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=lpn42.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/lpn42.tar
+CND_PACKAGE_NAME_Debug=lp42tt.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/lp42tt.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=lpn42
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/lpn42
+CND_ARTIFACT_NAME_Release=lp_42_tt
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/lp_42_tt
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=lpn42.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/lpn42.tar
+CND_PACKAGE_NAME_Release=lp42tt.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/lp42tt.tar
 #
 # include compiler specific variables
 #

@@ -14,6 +14,7 @@
 #define STA_SIZE 5
 #define STA_INIT 0
 #define STA_NUMB_MAX 999
+#define NUMBER_SENSORS 5
 
 typedef enum sensors {
     TEMPERATURE, PRECIPITATION, WINDSPEED, WINDDIRECTION, CLOUDINESS
@@ -22,9 +23,15 @@ typedef enum sensors {
 typedef struct station {
     unsigned short int number;
     General general;
-    Sensors sensors;
+    //Sensors sensors;
+    //Posição 0-Temperatura 1-precipitacao 2- velocidade do vento
+    // 3 direção do vento 4- nuvens
+    bool sensors[NUMBER_SENSORS];
+    //
     float coordinatesX;
     float coordinatesY;
+    int contMeasurements;
+    
 } Station;
 
 typedef struct sensCloudiness {
@@ -37,7 +44,6 @@ Station getNumberStation(Station station[]);
 Station getSensors(Station station);
 Station getCoordinates(Station station);
 Station addStation(Station stations[], int position);
-//Station modifyStation(Station station[], unsigned short int staNumb);
 Station modifyStation(Station station, int modOpt);
 Station removeStation(Station stations[], unsigned short int number);
 void listStations(Station station[]);

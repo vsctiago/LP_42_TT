@@ -7,7 +7,6 @@
 
 Measurement addMeasurement(Measurement measurement, unsigned long int employee,
          unsigned short int station) {
-    fghjk
     bool val = false;
     
     measurement.employee = employee;
@@ -17,6 +16,10 @@ Measurement addMeasurement(Measurement measurement, unsigned long int employee,
         scanf("%lu", &measurement);
     } while(val == false);
 }
+
+
+
+
 
 
 void createMeasurementFile(Measurement measurements[]) {
@@ -37,7 +40,7 @@ Measurement initMeasurementFile(Measurement measurements[]) {
         measurements[i].employee = 0;
         measurements[i].station = 0;
     }
-    return measurement[MEASUR_SIZE];
+    return measurements[MEASUR_SIZE];
 }
 
 Measurement readMeasurementFile(Measurement measurements[]) {

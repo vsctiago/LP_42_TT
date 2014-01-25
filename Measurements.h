@@ -5,13 +5,14 @@
  * Created on 17 de Janeiro de 2014, 21:32
  */
 
+
 #ifndef MEASUREMENTS_H
 #define	MEASUREMENTS_H
 
 #define MEASUR_SIZE 200
 
 typedef enum months {
-    JANUARY = 1, FEBRUARY, MARCH, APRIL, MAY, APRIL, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER
+    JANUARY = 1, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER
 } Months;
 
 typedef struct data {
@@ -34,10 +35,11 @@ typedef struct measurement {
     unsigned short int wind;
     unsigned short int direction;
     unsigned short int speed;
-    SensCloudiness cloudiness;
+//    SensCloudiness cloudiness;
 } Measurement;
 
 
+Measurement initMeasurementFile(Measurement measurements[]) ;
 
 #ifdef	__cplusplus
 extern "C" {
